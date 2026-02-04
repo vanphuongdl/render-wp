@@ -16,6 +16,6 @@ services:
       - key: MYSQL_USER
         value: wpuser
       - key: MYSQL_PASSWORD
-        value: wppass
+        value: wppass@
       - key: MYSQL_ROOT_PASSWORD
-        value: rootpass
+        value: rootpass@
