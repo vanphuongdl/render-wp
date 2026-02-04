@@ -3,9 +3,19 @@ services:
     name: wordpress
     env: docker
     plan: free
+    dockerfilePath: ./Dockerfile
     autoDeploy: true
+    envVars:
+      - key: WORDPRESS_DB_HOST
+        value: mysql
+      - key: WORDPRESS_DB_NAME
+        value: wpdb
+      - key: WORDPRESS_DB_USER
+        value: wpuser
+      - key: WORDPRESS_DB_PASSWORD
+        value: wppass
 
-  - type: pserv
+  - type: private_service
     name: mysql
     env: docker
     image:
@@ -16,6 +26,6 @@ services:
       - key: MYSQL_USER
         value: wpuser
       - key: MYSQL_PASSWORD
-        value: wppass@
+        value: wppass
       - key: MYSQL_ROOT_PASSWORD
-        value: rootpass@
+        value: rootpass
