@@ -5,27 +5,3 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     autoDeploy: true
-    envVars:
-      - key: WORDPRESS_DB_HOST
-        value: mysql
-      - key: WORDPRESS_DB_NAME
-        value: wpdb
-      - key: WORDPRESS_DB_USER
-        value: wpuser
-      - key: WORDPRESS_DB_PASSWORD
-        value: wppass
-
-  - type: private_service
-    name: mysql
-    env: docker
-    image:
-      url: mysql:8
-    envVars:
-      - key: MYSQL_DATABASE
-        value: wpdb
-      - key: MYSQL_USER
-        value: wpuser
-      - key: MYSQL_PASSWORD
-        value: wppass
-      - key: MYSQL_ROOT_PASSWORD
-        value: rootpass
