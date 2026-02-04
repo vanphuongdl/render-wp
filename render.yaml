@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: wordpress
+    env: docker
+    plan: free
+    autoDeploy: true
+
+  - type: pserv
+    name: mysql
+    env: docker
+    image:
+      url: mysql:8
+    envVars:
+      - key: MYSQL_DATABASE
+        value: wpdb
+      - key: MYSQL_USER
+        value: wpuser
+      - key: MYSQL_PASSWORD
+        value: wppass
+      - key: MYSQL_ROOT_PASSWORD
+        value: rootpass
